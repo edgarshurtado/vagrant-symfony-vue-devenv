@@ -1,5 +1,7 @@
-# Inicializar módulo
-> git submodule update --init
+# Instalación aplicación
+> $ git submodule update --init
+
+> $ npm run install
 
 # Inicializar servidor Symfony
 > php backend/bin/console server:run
