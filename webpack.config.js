@@ -55,7 +55,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist/**/*.*']),
         new HtmlWebpackPlugin({
-            template:'./src/template.html',
+            template:'./web/index.html',
             filename:'./index.html', // takes output folder as reference
             hash: true,
             chunks: ['js']
