@@ -2,6 +2,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var MiniCssExtractPlugin = require('mini-css-extract-plugin')
 var CleanWebpackPlugin = require('clean-webpack-plugin')
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+var path = require('path')
 
 module.exports = {
     entry:{
@@ -9,6 +10,10 @@ module.exports = {
     },
     output:{
         filename:'[name].[chunkhash].js'
+    },
+    devServer:{
+        contentBase: path.join(__dirname, 'dist'),
+        port: 8080
     },
     module:{
         rules:[
