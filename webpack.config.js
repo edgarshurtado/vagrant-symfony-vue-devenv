@@ -2,6 +2,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var MiniCssExtractPlugin = require('mini-css-extract-plugin')
 var CleanWebpackPlugin = require('clean-webpack-plugin')
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+var VueLoaderPlugin = require('vue-loader/lib/plugin')
 var path = require('path')
 
 module.exports = {
@@ -17,6 +18,10 @@ module.exports = {
     },
     module:{
         rules:[
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
             {
                 test:/\.js$/,
                 exclude: /node_modules/,
@@ -36,6 +41,7 @@ module.exports = {
             {
                 test:/\.(css|scss)$/,
                 use: [
+                    'vue-style-loader',
                     'style-loader',
                     MiniCssExtractPlugin.loader,
                     'css-loader?sourceMap',
@@ -58,6 +64,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new VueLoaderPlugin(),
         new CleanWebpackPlugin(['dist/**/*.*']),
         new HtmlWebpackPlugin({
             template:'./web/index.html',
