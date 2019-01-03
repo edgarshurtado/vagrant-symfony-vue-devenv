@@ -1,9 +1,17 @@
 {
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module"
-    },
+    "extends": "eslint:recommended",
+    "plugins": ["vue", "import"],
+    "parser": "babel-eslint",
     "rules": {
-        "semi": 2
+        /* your overrides */
+        "semi": ["warn", "never"],
+        "indent": ["error", 4],
+        "camelcase": ["warn", {"properties": "always"}],
+        "no-shadow": ["error", { "builtinGlobals": true, "hoist": "functions", "allow": [] }]
+    },
+    "globals":{
+        "window": true,
+        "console": true,
+        "document": true
     }
 }
