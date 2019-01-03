@@ -1,7 +1,6 @@
 {
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "plugin:vue/recommended"],
     "plugins": ["vue", "import"],
-    "parser": "babel-eslint",
     "rules": {
         /* your overrides */
         "semi": ["warn", "never"],

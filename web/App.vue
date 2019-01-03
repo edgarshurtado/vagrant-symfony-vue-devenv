@@ -9,6 +9,9 @@
                     greetings: 'Saludos Lockers'
                 }
             }
+        },
+        props:{
+            propA:Number
         }
     }
 </script>
