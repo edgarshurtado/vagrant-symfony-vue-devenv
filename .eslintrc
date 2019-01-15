@@ -6,7 +6,8 @@
         "semi": ["warn", "never"],
         "indent": ["error", 4],
         "camelcase": ["warn", {"properties": "always"}],
-        "no-shadow": ["error", { "builtinGlobals": true, "hoist": "functions", "allow": [] }]
+        "no-shadow": ["error", { "builtinGlobals": true, "hoist": "functions", "allow": [] }],
+        "vue/order-in-components": "error"
     },
     "globals":{
         "window": true,
