@@ -22,6 +22,16 @@ module.exports = (config) => {
             // webpack-dev-middleware configuration
             // i. e.
             stats: 'errors-only'
+        },
+        browsers: [
+            'ChromeDebugging'
+        ],
+        frameworks: ['jasmine'],
+        customLaunchers: {
+            ChromeDebugging: {
+                base: 'Chrome',
+                flags: [ '--remote-debugging-port=9333' ]
+              }
         }
     })
 }
