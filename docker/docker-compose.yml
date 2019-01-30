@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  nginx:
+    build:
+      context: ./nginx
+
+  php-fpm:
+    build:
+      context: ./php-fpm
