@@ -1,17 +1,12 @@
 <template>
-  <h1>{{ i18n.greetings }}</h1>
+<v-app>
+  <v-navigation-drawer app></v-navigation-drawer>
+  <v-toolbar app></v-toolbar>
+  <v-content>
+    <v-container fluid>
+      <router-view></router-view>
+    </v-container>
+  </v-content>
+  <v-footer app></v-footer>
+</v-app>
 </template>
-<script>
-export default {
-    props:{
-        propA:Number
-    },
-    data(){
-        return {
-            i18n:{
-                greetings: 'Saludos Lockers'
-            }
-        }
-    }
-}
-</script>

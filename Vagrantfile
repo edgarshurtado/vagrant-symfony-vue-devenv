@@ -12,13 +12,14 @@ Vagrant.configure("2") do |config|
   config.vm.box_check_update = false
 
   config.ssh.forward_agent = true
-  #config.ssh.forward_x11 = true 
+
+  config.vm.network :private_network, ip: "10.10.10.61"
 
   config.vm.network "forwarded_port", guest: 80, host: 80
   config.vm.network "forwarded_port", guest: 8080, host: 8080
   config.vm.network "forwarded_port", guest: 5000, host: 5000
 
-  config.vm.synced_folder "./", "/plock/webpage"
+  config.vm.synced_folder "./", "home/vagrant/plock/webpage"
 
   config.vm.provider "virtualbox" do |vb|
      vb.name = "plock_dev_ubu_1604"
