@@ -7,7 +7,7 @@ export default {
     data(){
         return {
             i18n:{
-                greetings: 'Saludos Lockers'
+                greetings: 'Saludos, Lockers'
             }
         }
     }
