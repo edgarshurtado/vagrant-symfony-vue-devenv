@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify'
-import App from './App.vue'
+import AppShell from './AppShell.vue'
 import 'vuetify/dist/vuetify.min.css'
 import './assets/scss/styles.scss'
 import VueRouter from 'vue-router'
@@ -18,5 +18,5 @@ const router = new VueRouter({
 const app = new Vue({
     router,
     el: '#app',
-    render: h => h(App)
+    render: h => h(AppShell)
 })

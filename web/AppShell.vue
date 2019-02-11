@@ -7,7 +7,7 @@
       app
     >
       <v-list dense>
-        <template v-for="item in items">
+        <template v-for="item in navBarMenuItems">
           <v-layout
             v-if="item.heading"
             :key="item.heading"
@@ -74,7 +74,7 @@
     >
       <v-toolbar-title style="width: 300px" class="ml-0 pl-3">
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-        <span class="hidden-sm-and-down">Escapeaffinity</span>
+        <span class="hidden-sm-and-down">{{ i18n.pageName }}</span>
       </v-toolbar-title>
       <v-text-field
         flat
@@ -93,8 +93,11 @@
             <v-icon>apps</v-icon>
         </v-btn>
         <v-list>
-            <v-list-tile>
-                <v-list-tile-title>Hello</v-list-tile-title>
+            <v-list-tile
+              v-for="(item, key) in userMenuItems"
+              :key="key"
+             >
+                <v-list-tile-title>{{ item }}</v-list-tile-title>
             </v-list-tile>
         </v-list>
       </v-menu>
@@ -117,12 +120,12 @@
       tile
     >
       <v-card-title class="blue darken-3">
-        <strong class="subheading">Get connected with us on social networks!</strong>
+        <strong class="subheading">{{ i18n.contactWithUs }}</strong>
 
         <v-spacer></v-spacer>
 
         <v-btn
-          v-for="icon in icons"
+          v-for="icon in socialIcons"
           :key="icon"
           class="mx-3"
           dark
@@ -133,7 +136,7 @@
       </v-card-title>
 
       <v-card-actions class="grey darken-3 justify-center">
-        &copy;2018 — <strong>Vuetify</strong>
+        &copy;2019 — <strong>{{ i18n.pageName }}</strong>
       </v-card-actions>
     </v-card>
   </v-footer>
@@ -145,24 +148,31 @@
     data: () => ({
       dialog: false,
       drawer: null,
-      items: [
+      navBarMenuItems: [
         { icon: 'search', text: 'Buscador de Escape Room' },
         { icon: 'stars', text: 'Las + Populares' },
         { icon: 'filter_list', text: 'Rankings' },
-        { icon: 'content_copy', text: 'Estadísticas globales' },
+        { icon: 'fas fa-globe-europe', text: 'Estadísticas globales' },
         { icon: 'add', text: 'Añade una Escape Room' },
-        { icon: 'phonelink', text: 'Blog' },
-        { icon: 'content_copy', text: 'Colabora con Nosotros' },
-        { icon: 'content_copy', text: 'Contáctanos' }
+        { icon: 'fas fa-blog', text: 'Blog' },
+        { icon: 'far fa-handshake', text: 'Colabora con Nosotros' },
+        { icon: 'far fa-envelope', text: 'Contáctanos' }
       ],
-      icons: [
+      userMenuItems: [
+        'Perfil',
+        'Amigos',
+        'Mis estadísticas',
+        'Listas'
+      ],
+      socialIcons: [
           "fab fa-twitter", 
           "fab fa-facebook", 
           "fab fa-instagram"
       ],
-    }),
-    props: {
-      source: String
-    }
+      i18n:{
+        contactWithUs: '¡Contacta con nosotros en las redes sociales!',
+        pageName: 'Escapeaffinity'
+      }
+    })
   }
 </script>
