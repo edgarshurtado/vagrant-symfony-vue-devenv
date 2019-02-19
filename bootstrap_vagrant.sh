@@ -17,6 +17,10 @@ else
     sudo bash nodesource_setup.sh
     # instalar node.js y npm
     sudo apt-get install  nodejs
+
+    # evitar tener que usar sudo para lanzar actualizaciones de npm
+    sudo chown -R $USER:$(id -gn $USER) /home/vagrant/.config
+
     # instalar karma-cli
     sudo npm install -g karma-cli
 fi

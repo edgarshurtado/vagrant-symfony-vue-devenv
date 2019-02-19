@@ -5,15 +5,19 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 var VueLoaderPlugin = require('vue-loader/lib/plugin')
 var path = require('path')
 
+var outputPath = path.join(__dirname, 'templates') 
+
 module.exports = {
     entry:{
-        js: './web/index.js',
+        js: './src/Frontend/index.js',
     },
     output:{
-        filename:'[name].[chunkhash].js'
+        filename:'[name].[chunkhash].js',
+        path: outputPath
+
     },
     devServer:{
-        contentBase: path.join(__dirname, 'dist'),
+        contentBase: outputPath,
         port: 8080
     },
     devtool: 'eval-source-map',
@@ -66,10 +70,10 @@ module.exports = {
     },
     plugins: [
         new VueLoaderPlugin(),
-        new CleanWebpackPlugin(['dist/**/*.*']),
+        new CleanWebpackPlugin(['templates/**/*.*']),
         new HtmlWebpackPlugin({
-            template:'./web/index.html',
-            filename:'./index.html', // takes output folder as reference
+            template:'./src/Frontend/index.html',
+            filename:'index.html', // takes output folder as reference
             hash: true,
             chunks: ['js']
         }),

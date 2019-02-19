@@ -6,15 +6,15 @@ module.exports = (config) => {
         // ... normal karma configuration
         files: [
             // all files ending in "_test"
-            { pattern: 'test/*_test.js', watched: false },
-            { pattern: 'test/**/*_test.js', watched: false }
+            { pattern: 'src/Frontend/tests/*_test.js', watched: false },
+            { pattern: 'src/Frontend/tests/**/*_test.js', watched: false }
             // each file acts as entry point for the webpack configuration
         ],
 
         preprocessors: {
             // add webpack as preprocessor
-            'test/*_test.js': ['webpack'],
-            'test/**/*_test.js': ['webpack']
+            'src/Frontend/tests/*_test.js': ['webpack'],
+            'src/Frontend/tests/**/*_test.js': ['webpack']
         },
 
         webpack: webpackConfig,
@@ -26,16 +26,16 @@ module.exports = (config) => {
             // i. e.
             stats: 'errors-only'
         },
-        browsers: [
-            'ChromeDebugging'
-        ],
         frameworks: ['jasmine'],
-        customLaunchers: {
-            ChromeDebugging: {
-                base: 'Chrome',
-                flags: [ '--remote-debugging-port=9333' ]
-              }
-        },
+        //browsers: [
+        //    'ChromeDebugging'
+        //],
+        //customLaunchers: {
+        //    ChromeDebugging: {
+        //        base: 'Chrome',
+        //        flags: ['--remote-debugging-port=9333']
+        //    }
+        //},
         plugins: [
             'karma-chrome-launcher',
             'karma-jasmine',
