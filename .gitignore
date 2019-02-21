@@ -26,4 +26,5 @@ composer.lock
 
 /node_modules/
 /.vagrant/
-/templates/
+/public/
+!/public/index.php

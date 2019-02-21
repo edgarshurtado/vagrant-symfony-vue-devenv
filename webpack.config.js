@@ -5,7 +5,7 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 var VueLoaderPlugin = require('vue-loader/lib/plugin')
 var path = require('path')
 
-var outputPath = path.join(__dirname, 'templates') 
+var outputPath = path.join(__dirname, 'public') 
 
 module.exports = {
     entry:{
@@ -70,7 +70,12 @@ module.exports = {
     },
     plugins: [
         new VueLoaderPlugin(),
-        new CleanWebpackPlugin(['templates/**/*.*']),
+        new CleanWebpackPlugin(
+            ['public'],
+            {
+                exclude: ['index.php']
+            }
+        ),
         new HtmlWebpackPlugin({
             template:'./src/Frontend/index.html',
             filename:'index.html', // takes output folder as reference
