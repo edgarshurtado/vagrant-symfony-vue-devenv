@@ -62,3 +62,6 @@ else
     sudo mv composer /usr/bin/
     sudo rm composer-setup.php
 fi
+
+sudo apt-get install tmux
+sudo apt-get install htop

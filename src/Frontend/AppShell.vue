@@ -149,7 +149,7 @@
       dialog: false,
       drawer: null,
       navBarMenuItems: [
-        { icon: 'search', text: 'Buscador de Escape Room' },
+        { icon: 'search', text: 'Buscador de Escape Rooms' },
         { icon: 'stars', text: 'Las + Populares' },
         { icon: 'filter_list', text: 'Rankings' },
         { icon: 'fas fa-globe-europe', text: 'Estadísticas globales' },

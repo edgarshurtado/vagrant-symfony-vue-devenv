@@ -20,6 +20,9 @@ module.exports = {
         contentBase: outputPath,
         port: 8080
     },
+    watchOptions: {
+        poll: true
+    },
     devtool: 'eval-source-map',
     module:{
         rules:[
