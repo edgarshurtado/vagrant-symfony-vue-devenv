@@ -4,7 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
-    "test": "karma start",
+    "tests": "karma start",
     "remote-dev": "webpack-dev-server --host 0.0.0.0 --watch-poll",
     "build": "webpack --progress",
     "dev": "webpack --watch --progress"
