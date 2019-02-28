@@ -1,0 +1,9 @@
+version: '3'
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 'pass'
+      MYSQL_DATABASE: plock
+      MYSQL_USER: plock
+      MYSQL_PASSWORD: plock

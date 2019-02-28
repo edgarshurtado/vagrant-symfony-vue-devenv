@@ -23,4 +23,3 @@ class PHPUnitWorksTest extends TestCase{
         $this->assertNotEquals('foo', 'bar');
     }
 }
-?>
