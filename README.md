@@ -35,3 +35,24 @@ Si queremos cambiar el puerto por el que está escuchando (ej: 8080), en lugar d
 ```bash
 php backend/bin/console server:start 0.0.0.0:8080
 ```
+> el 0.0.0.0 es para poder acceder desde el host (Vagrant en este caso)
+
+## Base de datos
+
+Para levantar la base de datos, dentro de la carpeta `docker`, ejecutar:
+
+```bash
+sudo docker-compose up
+```
+
+
+## Migraciones bases de datos
+Crear una nueva migración (Se guardan en src/Migrations)
+```bash
+php bin/console make:migration
+```
+
+Ejecutar migraciones pendientes
+```bash
+php bin/console doctrine:migrations:migrate
+```
