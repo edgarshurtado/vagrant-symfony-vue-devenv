@@ -11,6 +11,7 @@ fi
 if [ -f /usr/bin/nodejs ]
 then
     echo "node.js and karma already installed"
+    npm install -g npm #  update npm
 else
     cd ~
     curl -sL https://deb.nodesource.com/setup_11.x -o nodesource_setup.sh
