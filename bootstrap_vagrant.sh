@@ -40,6 +40,8 @@ else
 fi
 
 if [ -f /usr/bin/phpunit]; then
+    echo "phpunit already installed"
+else
     wget -O phpunit https://phar.phpunit.de/phpunit-8.phar
     chmod +x phpunit
     sudo mv phpunit /usr/bin/

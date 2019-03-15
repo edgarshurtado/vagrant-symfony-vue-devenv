@@ -62,3 +62,4 @@
 /.vagrant/
 /public/
 !/public/index.php
+.phpunit.result.cache
