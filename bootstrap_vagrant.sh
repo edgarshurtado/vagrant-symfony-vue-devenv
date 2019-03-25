@@ -11,6 +11,7 @@ fi
 if [ -f /usr/bin/nodejs ]
 then
     echo "node.js and karma already installed"
+    npm install -g npm #  update npm
 else
     cd ~
     curl -sL https://deb.nodesource.com/setup_11.x -o nodesource_setup.sh
@@ -39,6 +40,8 @@ else
 fi
 
 if [ -f /usr/bin/phpunit]; then
+    echo "phpunit already installed"
+else
     wget -O phpunit https://phar.phpunit.de/phpunit-8.phar
     chmod +x phpunit
     sudo mv phpunit /usr/bin/
