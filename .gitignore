@@ -33,6 +33,9 @@
 !bin/symfony_requirements
 /vendor/
 
+# Test database
+/var/test.db3
+
 # Assets and user uploads
 /web/bundles/
 /web/uploads/

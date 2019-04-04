@@ -35,7 +35,7 @@ else
     sudo apt-get install -y python-software-properties
     sudo add-apt-repository -y ppa:ondrej/php
     sudo apt-get update -y
-    sudo apt install -y php7.2 php7.0-cli php7.2-common php7.2-mbstring php7.2-intl php7.2-xml php7.2-mysql php-curl php7.2-zip
+    sudo apt install -y php7.2 php7.0-cli php7.2-common php7.2-mbstring php7.2-intl php7.2-xml php7.2-mysql php-curl php7.2-zip, php7.2-sqlite3
     sudo update-alternatives --set php /usr/bin/php7.2
 fi
 
@@ -64,6 +64,8 @@ else
     sudo php composer-setup.php --quiet --filename=composer 
     sudo mv composer /usr/bin/
     sudo rm composer-setup.php
+
+    sudo apt-get install -y zip unzip
 fi
 
 sudo apt-get install tmux
