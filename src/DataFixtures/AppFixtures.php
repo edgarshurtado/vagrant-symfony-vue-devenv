@@ -10,7 +10,6 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        print('Hello from fixtures');
         $user = new User();
         $user->setEmail('robe@fake_domain.com');
         $user->setPassword('test');
