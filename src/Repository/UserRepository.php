@@ -23,6 +23,8 @@ class UserRepository extends ServiceEntityRepository
 
     public function create($user){
 
+        $user->setPassword($this->password_encoder->encodePassword($user, $user->getPassword()));
+
         $entityManager = $this->getEntityManager();
         $entityManager->persist($user);
         $entityManager->flush();
