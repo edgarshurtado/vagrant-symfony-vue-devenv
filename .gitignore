@@ -32,6 +32,7 @@
 !bin/console
 !bin/symfony_requirements
 /vendor/
+/composer.lock
 
 # Test database
 /var/test.db3
