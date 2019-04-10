@@ -6,13 +6,13 @@ use App\Repository\UserRepository;
 
 class SecurityTest extends KernelTestCase{
     public function testRegisteredUserHasEncryptedPass(){
-        self::bootKernel();
 
-        $plain_password = 'test';
         $user = new User();
         $user->setEmail('fake_user2@fake_domain.com');
+        $plain_password = 'test';
         $user->setPassword($plain_password);
 
+        self::bootKernel();
         $container = self::$kernel->getContainer();
         $entityManager = $container->get('doctrine')->getManager();
 
@@ -20,7 +20,7 @@ class SecurityTest extends KernelTestCase{
         $user_repository->create($user);
 
         $userFromDB = $user_repository->findByEmail('fake_user2@fake_domain.com')->getPassword(); 
-        $pass = explode('$', $userFromDB);
-        $this->assertEquals($pass[1], 'argon2i');
+        $pass_encription = explode('$', $userFromDB)[1];
+        $this->assertEquals($pass_encription, 'argon2i');
     }
 }
