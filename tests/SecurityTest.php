@@ -8,7 +8,7 @@ class SecurityTest extends KernelTestCase{
     public function testRegisteredUserHasEncryptedPass(){
 
         $user = new User();
-        $user->setEmail('fake_user2@fake_domain.com');
+        $user->setEmail('fake_user2@plock.com');
         $plain_password = 'test';
         $user->setPassword($plain_password);
 
@@ -19,7 +19,7 @@ class SecurityTest extends KernelTestCase{
         $user_repository = $entityManager->getRepository(User::class);
         $user_repository->create($user);
 
-        $userFromDB = $user_repository->findByEmail('fake_user2@fake_domain.com')->getPassword(); 
+        $userFromDB = $user_repository->findByEmail('fake_user2@plock.com')->getPassword(); 
         $pass_encription = explode('$', $userFromDB)[1];
         $this->assertEquals($pass_encription, 'argon2i');
     }

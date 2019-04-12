@@ -13,22 +13,22 @@ class AppFixtures extends Fixture
         $user_repository = $manager->getRepository(User::class);
 
         $user = new User();
-        $user->setEmail('robe@fake_domain.com');
+        $user->setEmail('robe@plock.com');
         $user->setPassword('test');
         $user_repository->create($user);
 
         $user = new User();
-        $user->setEmail('sara@fake_domain.com');
+        $user->setEmail('sara@plock.com');
         $user->setPassword('test');
         $user_repository->create($user);
 
         $user = new User();
-        $user->setEmail('ana@fake_domain.com');
+        $user->setEmail('ana@plock.com');
         $user->setPassword('test');
         $user_repository->create($user);
 
         $user = new User();
-        $user->setEmail('javi@fake_domain.com');
+        $user->setEmail('javi@plock.com');
         $user->setPassword('test'); 
         $manager->persist($user);
 

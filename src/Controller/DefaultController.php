@@ -19,19 +19,5 @@ class DefaultController extends AbstractController{
 
         return $response;
     }
-
-    /**
-     * @Route("/login", name="login_page", methods={"GET"})
-     */
-    public function login_page(){
-        $apppath = __DIR__.'/../../public/index.html';
-        $response = new Response();
-
-        $response->setContent('hola');
-        $response->headers->set('Content-Type', 'text/html');
-        $response->setStatusCode(Response::HTTP_OK);
-
-        return $response;
-    }
 }
 ?>

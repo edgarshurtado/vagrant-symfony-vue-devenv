@@ -10,7 +10,7 @@ use Doctrine\Common\Persistence\ObjectRepository;
 class LearningMockTest extends TestCase{
     public function testMockedFunctionIsCalledOnce(){
         $user = new User();
-        $user->setEmail('fake_user@fake_domain.com');
+        $user->setEmail('fake_user@plock.com');
 
         $userRepository = $this->createMock(ObjectRepository::class);
         $userRepository->expects($this->once())
@@ -18,12 +18,12 @@ class LearningMockTest extends TestCase{
             ->willReturn($user);
 
         $userFromRepository = $userRepository->find(1);
-        $this->assertEquals('fake_user@fake_domain.com', $userFromRepository->getEmail());
+        $this->assertEquals('fake_user@plock.com', $userFromRepository->getEmail());
 
     }
      public function testMockedFunctionIsCalledSeveralTimes(){
         $user = new User();
-        $user->setEmail('fake_user@fake_domain.com');
+        $user->setEmail('fake_user@plock.com');
 
         $userRepository = $this->createMock(ObjectRepository::class);
         $userRepository->expects($this->any())
@@ -35,7 +35,7 @@ class LearningMockTest extends TestCase{
             $userFromRepository = $userRepository->find(1);
         }
 
-        $this->assertEquals('fake_user@fake_domain.com', $userFromRepository->getEmail());
+        $this->assertEquals('fake_user@plock.com', $userFromRepository->getEmail());
 
      }
 }

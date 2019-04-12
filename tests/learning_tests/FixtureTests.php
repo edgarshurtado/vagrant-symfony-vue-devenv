@@ -12,7 +12,7 @@ class FixtureTests extends KernelTestCase{
         self::bootKernel();
         $entityManager = self::$kernel->getContainer()->get('doctrine')->getManager();
         $user_repository = $entityManager->getRepository(User::class);
-        $userFromDB = $user_repository->findByEmail('robe@fake_domain.com'); 
-        $this->assertEquals('robe@fake_domain.com', $userFromDB->getEmail());
+        $userFromDB = $user_repository->findByEmail('robe@plock.com'); 
+        $this->assertEquals('robe@plock.com', $userFromDB->getEmail());
      }
 }
