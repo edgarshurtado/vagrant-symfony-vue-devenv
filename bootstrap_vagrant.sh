@@ -32,11 +32,11 @@ if [ -L /usr/bin/php ]; then
 else
     echo "Installing PHP..."
     cd ~
-    sudo apt-get install -y python-software-properties
+    sudo apt-get install -y software-properties-common
     sudo add-apt-repository -y ppa:ondrej/php
-    sudo apt-get update -y
-    sudo apt install -y php7.2 php7.0-cli php7.2-common php7.2-mbstring php7.2-intl php7.2-xml php7.2-mysql php-curl php7.2-zip, php7.2-sqlite3
-    sudo update-alternatives --set php /usr/bin/php7.2
+    sudo apt update -y
+    sudo apt-get install -y php7.3 php7.3-common php7.3-mbstring php7.3-intl php7.3-xml php7.3-mysql php-curl php7.3-zip php7.3-sqlite3
+    #sudo update-alternatives --set php /usr/bin/php7.3
 fi
 
 if [ -f /usr/bin/phpunit]; then
@@ -67,6 +67,17 @@ else
 
     sudo apt-get install -y zip unzip
 fi
+
+# xdbug ========================
+#if [ -L /usr/bin/php ]; then
+    #echo "XDebug installed"
+#else
+    #wget http://xdebug.org/files/xdebug-2.7.1.tgz
+    #sudo apt-get update
+    #sudo apt-get install php-dev autoconf automake -y
+    #tar -xvzf xdebug-2.7.1.tgz
+    #cd xdebug-2.7.1
+
 
 sudo apt-get install tmux
 sudo apt-get install htop
