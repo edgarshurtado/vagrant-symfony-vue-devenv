@@ -8,6 +8,6 @@ services:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: plock_test
+      MYSQL_DATABASE: plockdb
       MYSQL_USER: plock
       MYSQL_PASSWORD: plock
