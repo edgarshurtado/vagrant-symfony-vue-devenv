@@ -1,31 +1,32 @@
 #!/bin/bash
 
-start_db(){
+db_start(){
     sudo docker start plock_mysql
 }
 
-stop_db(){
+db_stop(){
     sudo docker stop plock_mysql 
 }
 
-run_server(){
-    php bin/console server:start 0.0.0.0:8080
-}
-
-stop_server(){
-    php bin/console server:stop
-}
-
-regenerate_db(){
+db_regenerate(){
     php bin/console doctrine:schema:drop --force --no-interaction
     php bin/console doctrine:schema:update --force --no-interaction
     php bin/console doctrine:fixtures:load --no-interaction
 }
 
-migrate_db(){
+db_migrate(){
     php bin/console make:migration
 }
 
-update_db(){
+db_update(){
     php bin/console doctrine:migrations:migrate --no-interaction
 }
+
+server_start(){
+    php bin/console server:start 0.0.0.0:8080
+}
+
+serever_stop(){
+    php bin/console server:stop
+}
+
