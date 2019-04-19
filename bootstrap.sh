@@ -30,6 +30,9 @@ apt-get -o Dpkg::Options::="--force-confnew" --force-yes -fuy dist-upgrade
 apt-get -y autoremove
 
 
+# Prevent Mysql to start at boot
+sudo systemctl disable mysql
+
 #docker
 sudo apt-get install -y \
     apt-transport-https \
