@@ -26,7 +26,7 @@ server_start(){
     php bin/console server:start 0.0.0.0:8080
 }
 
-serever_stop(){
+server_stop(){
     php bin/console server:stop
 }
 
