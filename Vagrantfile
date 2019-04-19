@@ -6,7 +6,7 @@
 Vagrant.configure("2") do |config|
   # boxes at https://atlas.hashicorp.com/search.
   # config.vm.box = "dev.box"
-  config.vm.box = "bento/ubuntu-16.04"
+  config.vm.box = "bento/ubuntu-18.04"
   config.vm.hostname = "plock-host"
 
   config.vm.box_check_update = false
@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "./", "/home/vagrant/plock"
 
   config.vm.provider "virtualbox" do |vb|
-     vb.name = "plock_dev_ubu_1604"
+     vb.name = "plock_dev_ubu_1804"
      vb.customize ["modifyvm", :id, "--nictype1", "virtio"]
      vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
      vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
