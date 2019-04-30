@@ -1,4 +1,8 @@
-# P-Lock
+# Vagrant-Symfony-Vue-devenv
+
+Entorno de desarrollo preparado para poder trabajar con los frameworks `Symfony` y `Vue` desde una máquina virtual manejada por `Vagrant`.
+
+La idea de este repositorio es que sirva de base para el desarrollo de aplicaciones web.
 
 ## Instalación aplicación
 
@@ -22,7 +26,7 @@ La carpeta de la aplicación está compartida entre la máquina virtual y el ord
 el código se puede editar desde tu OS nativo y la máquina Vagrant se encargará de hacer la build
 y refrescar el navegador automáticamente.
 
-## Inicializar servidor Symfony ( De momento esto nada)
+## Inicializar servidor Symfony 
 
 ```bash
 php backend/bin/console server:run
@@ -58,5 +62,8 @@ php bin/console doctrine:migrations:migrate
 
 ### php
 ```bash
-phpunit tests
+php bin/phpunit tests
 ```
+
+## Aliases
+Para mayor comodidad en el desarrollo, en el archivo `command_aliases` hay alias para las tareas descritas anteriormente
