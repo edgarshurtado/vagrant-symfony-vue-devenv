@@ -1,5 +1,9 @@
 #!/bin/bash
 
+db_create(){
+    sudo docker-compose -f docker/docker-compose.yml build
+}
+
 db_start(){
     sudo docker start plock_mysql
 }
