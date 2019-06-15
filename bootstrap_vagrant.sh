@@ -69,15 +69,29 @@ else
 fi
 
 # xdbug ========================
-#if [ -L /usr/bin/php ]; then
-    #echo "XDebug installed"
-#else
-    #wget http://xdebug.org/files/xdebug-2.7.1.tgz
-    #sudo apt-get update
-    #sudo apt-get install php-dev autoconf automake -y
-    #tar -xvzf xdebug-2.7.1.tgz
-    #cd xdebug-2.7.1
+if [ -L /usr/lib/php/20180731/xdbug.so ]; then
+    echo "XDebug installed"
+else
+    wget http://xdebug.org/files/xdebug-2.7.1.tgz
+    sudo apt-get install php-dev autoconf automake -y
+    tar -xvzf xdebug-2.7.1.tgz
+    cd xdebug-2.7.1
+    phpize
+    ./configure
+    make
+    sudo cp modules/xdebug.so /usr/lib/php/20180731
 
+    sudo sh -c 'echo "
+    zend_extension = /usr/lib/php/20180731/xdebug.so
+    [XDebug]
+    xdebug.remote_enable=1
+    xdebug.remote_autostart=1
+    xdebug.remote_host = 10.0.2.2
+    xdebug.remote_connect_back = 1
+    xdebug.remote_port = 9000
+    xdebug.max_nesting_level = 512" >> /etc/php/7.3/cli/php.ini'
+
+fi
 
 sudo apt-get install tmux
 sudo apt-get install htop
